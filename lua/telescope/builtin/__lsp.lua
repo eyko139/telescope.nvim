@@ -38,6 +38,7 @@ lsp.references = function(opts)
     if vim.tbl_isempty(locations) then
       return
     end
+    print(locations)
 
     if #locations == 1 and opts.jump_type ~= "never" then
       if filepath ~= locations[1].filename then

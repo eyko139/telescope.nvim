@@ -190,10 +190,7 @@ local function list_or_jump(action, title, opts)
     local offset_encoding = vim.lsp.get_client_by_id(ctx.client_id).offset_encoding
 
     for k, v in pairs(flattened_results) do
-      print(k, v)
-      print(v.targetUri)
-      print(opts.exclude)
-      if string.find(v.targetUri, "/react/index.d.ts") then
+      if string.find(v.targetUri, opts.exclude) then
         flattened_results[k] = nil
       end
     end

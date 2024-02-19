@@ -190,6 +190,9 @@ local function list_or_jump(action, title, opts)
     local offset_encoding = vim.lsp.get_client_by_id(ctx.client_id).offset_encoding
 
     for k, v in pairs(flattened_results) do
+      if v.targetUri == nil then
+        break
+      end
       if string.find(v.targetUri, opts.exclude) then
         flattened_results[k] = nil
       end

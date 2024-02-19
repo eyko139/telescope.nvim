@@ -189,6 +189,10 @@ local function list_or_jump(action, title, opts)
 
     local offset_encoding = vim.lsp.get_client_by_id(ctx.client_id).offset_encoding
 
+    for k, v in pairs(flattened_results) do
+      print(k, v)
+    end
+
     if #flattened_results == 0 then
       return
     elseif #flattened_results == 1 and opts.jump_type ~= "never" then

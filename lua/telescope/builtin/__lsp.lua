@@ -192,6 +192,7 @@ local function list_or_jump(action, title, opts)
     for k, v in pairs(flattened_results) do
       print(k, v)
       print(v.targetUri)
+      print(opts.exclude)
       if string.find(v.targetUri, "/react/index.d.ts") then
         flattened_results[k] = nil
       end

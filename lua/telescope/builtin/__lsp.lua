@@ -191,6 +191,7 @@ local function list_or_jump(action, title, opts)
 
     for k, v in pairs(flattened_results) do
       print(k, v)
+      print(v.targetUri)
     end
 
     if #flattened_results == 0 then
